@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <stdio.h>
+#include <unistd.h>
 
 int _strln(char str[]);
 int _putshar(char c);
