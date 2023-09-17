@@ -1,1 +1,0 @@
-We have set up a dedicated repository on GitHub to serve as the central hub for our printf collaborative work. This is necessary because it provides us with essential tools and features to streamline our development process, including version control, issue tracking, project boards, code review, and collaboration workflows.
