@@ -7,43 +7,33 @@
  */
 int _printf(const char *format, ...)
 {
-	int lan = 0;
 	va_list args;
-	unsigned int i = 0;
-	unsigned int count = 0;
-	char *s;
+	int count = 0;
+	char *msg = "Custom specifier: %r\n";
 
 	va_start(args, format);
-	if (!format[i])
-		return (-1);
-	while (format[i])
+
+	while (*format != '\0')
 	{
-		if (format[i] != '%')
+		if (*format == '%')
 		{
-			_putshar(format[i]);
-			i++;
-			count++;
+			format++;
+
+			if (*format == 'r')
+			{
+				printf("%s", msg);
+				count += _strln(msg);
+				format++;
+				continue;
+			}
 		}
-		else if (format[i] == '%' && format[i + 1] == 'c')
-		{
-			_putshar((unsigned char)va_arg(args, int));
-			i += 2;
-			count++;
-		}
-		else if (format[i] == '%' && format[i + 1] == 's')
-		{
-			s = (va_arg(args, char *));
-			write(1, s, lan);
-			count += lan;
-			i += 2;
-		}
-		else if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putshar('%');
-			i += 2;
-			count++;
-		}
+
+		putchar(*format);
+		count++;
+		format++;
 	}
+
 	va_end(args);
-	return (count);
+
+	return count;
 }
