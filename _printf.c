@@ -47,11 +47,10 @@ int _printf(const char *format, ...)
 			i += 2;
 			count++;
 		}
-		else if (format[i] == '%' && format[i + 1] == 'r')
+		else
 		{
-			_putshar('A');
-			i += 2;
-			count++;
+			count += _putshar('%');
+			break;
 		}
 	}
 	va_end(args);
