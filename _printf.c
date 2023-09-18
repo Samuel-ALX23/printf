@@ -5,35 +5,55 @@
  *
  *Return: The number of characters printed
  */
+int _printf(const char *format, ...);
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int i = 0;
 	int count = 0;
-	char *msg = "Custom specifier: %r\n";
+	char *str;
+	int lan = 0;
 
 	va_start(args, format);
 
-	while (*format != '\0')
+	if (!format[i])
+		return (-1);
+
+	while (format[i])
 	{
-		if (*format == '%')
+		if (format[i] != '%')
 		{
-			format++;
-
-			if (*format == 'r')
-			{
-				printf("%s", msg);
-				count += _strln(msg);
-				format++;
-				continue;
-			}
+			_putshar(format[i]);
+			i++;
+			count++;
 		}
-
-		putchar(*format);
-		count++;
-		format++;
+		else if (format[i] == '%' && format[i + 1] == 'c')
+		{
+			_putshar((unsigned char)va_arg(args, int));
+			i += 2;
+			count++;
+		}
+		else if (format[i] == '%' && format[i + 1] == 's')
+		{
+			str = (va_arg(args, char *));
+			lan = _strln(str);
+			write(1, str, lan);
+			count += lan;
+			i += 2;
+		}
+		else if (format[i] == '%' && format[i + 1] == '%')
+		{
+			_putshar('%');
+			i += 2;
+			count++;
+		}
+		else if (format[i] == '%' && format[i + 1] == 'r')
+		{
+			_putshar('A');
+			i += 2;
+			count++;
+		}
 	}
-
 	va_end(args);
-
 	return (count);
 }
