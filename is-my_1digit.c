@@ -5,8 +5,7 @@
  *
  *Return: count
  */
-int output_digit(const char *format, ...);
-int output_digit(const char *format, ...)
+int _printf(const char *format, ...)
 {
 
 	va_list args;
@@ -34,6 +33,7 @@ int output_digit(const char *format, ...)
 			{
 				count += sm_selector(format[i])(args);
 			}
+			
 			else
 			{
 				count += _putshar('%');
@@ -50,3 +50,4 @@ int output_digit(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+
