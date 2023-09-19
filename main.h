@@ -17,5 +17,7 @@ int d_placer(va_list arg);
 int c_placer(va_list arg);
 int s_placer(va_list arg);
 int i_placer(va_list arg);
+int output_digit(const char *format, ...);
+
 
 #endif

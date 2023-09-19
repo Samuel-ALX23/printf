@@ -24,33 +24,34 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 'c' || format[i] == 's')
+			if (format[i] == 'c' || format[i] == 's' ||
+					format[i] == 'd' || format[i] == 'i')
 			{
 				count += sm_selector(format[i])(args);
 			}
 			else if (format[i] == '%')
 			{
-				count += _putshar('%');
+				_putshar('%');
+				count++;
 			}
 			else
 			{
-				count += _putshar('%');
-				count += _putshar(format[i]);
+				_putshar('%');
+				_putshar(format[i]);
+				count++;
 			}
-
 		}
 		else
 		{
-			count += _putshar(format[i]);
+			_putshar(format[i]);
+			count++;
 		}
 	}
-
 	va_end(args);
 	return (count);
 }
