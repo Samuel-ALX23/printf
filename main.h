@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int _strln(char str[]);
+int _strln(const char str[]);
 int _putshar(char c);
 int _printf(const char *format, ...);
 int output_num(long num, int i);

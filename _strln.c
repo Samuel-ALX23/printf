@@ -5,7 +5,7 @@
  *
  *Return: lan.
  */
-int _strln(char str[])
+unsigned int _strln(const char str[])
 {
 	int lan = 0;
 	int n = 0;
