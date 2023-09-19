@@ -1,3 +1,11 @@
+#include "main.h"
+
+/**
+ *sm_selector - its a function pointer.
+ *@str: is a character string
+ *
+ *Return: format specificers.
+ */
 int (*sm_selector(char str))(va_list args)
 {
 	if (str == 'c')

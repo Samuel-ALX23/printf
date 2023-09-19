@@ -1,3 +1,11 @@
+#include "main.h"
+/**
+ *output_num - function for printing numbers
+ *@num: intialing mixed numbers
+ *@i: is an integer
+ *
+ *Return: a number
+ */
 int output_num(long num, int i)
 {
 	if (num < 0)

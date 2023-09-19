@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * c_placer: function takes a character as input, formats it according
- * s_placer: his function receives a string as input, applies formatting to the string according
+ * s_placer - a function that handles a string.
+ * applies formatting to the string.
  * @arg: A va_list containing the argument to be formatted and printed
  *
  * Return: The number of characters printed
@@ -24,6 +24,13 @@ int s_placer(va_list arg)
 
 	return (y);
 }
+
+/**
+ *c_placer -  it a function that handle a charater.
+ *@arg: A va_list containing the argument to be formatted and printed
+ *
+ *Return: The number of characters printed
+ */
 
 int c_placer(va_list arg)
 {
