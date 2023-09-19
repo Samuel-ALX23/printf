@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	va_start(args, format);
-	if (!format)
+	if (format == NULL)
 	{
 		return (-1);
 	}
@@ -21,8 +21,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-
-			if (format[i + 1] == 'c' || format[i + 1] == 's')
+			i++
+			if (format[i] == 'c' || format[i] == 's')
 			{
 				count += sm_selector(format[i])(args);
 			}
