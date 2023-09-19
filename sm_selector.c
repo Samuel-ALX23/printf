@@ -10,7 +10,7 @@ int (*sm_selector(char str))(va_list args)
 {
 	if (str == 'c')
 	{
-		return (&_cplacer);
+		return (&c_placer);
 	}
 	else if  (str == 'd')
 	{

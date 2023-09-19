@@ -13,7 +13,7 @@ int d_placer(va_list arg)
 
 	int val = va_arg(arg, int);
 
-	y = out_num(val, 0);
+	y = output_num(val, 0);
 	return (y);
 }
 
@@ -30,6 +30,7 @@ int i_placer(va_list arg)
 
 	int val = va_arg(arg, int);
 
-	y = output_num(val, 0)
+	y = output_num(val, 0);
 		return (y);
+
 }

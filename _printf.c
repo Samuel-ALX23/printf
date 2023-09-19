@@ -24,17 +24,17 @@ int _printf(const char *format, ...)
 
 			if (format[i + 1] == 'c' || format[i + 1] == 's')
 			{
-				count += selector(format[i])(args);
+				count += sm_selector(format[i])(args);
 			}
 			else
 			{
-				count += _putchar('%');
+				count += _putshar('%');
 				continue;
 			}
 		}
 		else
 		{
-			ncount += _putchar(format[i]);
+			count += _putshar(format[i]);
 		}
 	}
 	va_end(args);
