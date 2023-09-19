@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * i_placer- Handles the formatting and printing of an integer
- * d_placer: Handles the formatting and printing of an integer
+ * d_placer - a function that takes and print formated integers
  * @arg: A va_list containing the argument to be formatted and printed.
  *
  * Return: The number of characters printed.
@@ -17,6 +16,13 @@ int d_placer(va_list arg)
 	y = out_num(val, 0);
 	return (y);
 }
+
+/**
+ * i_placer - a function that produces formatted integers as an output
+ * @arg: A va_list containing the argument to be formatted and printed.
+ *
+ * Return: The number of characters printed.
+ */
 
 int i_placer(va_list arg)
 {
