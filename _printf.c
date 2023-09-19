@@ -6,7 +6,7 @@
  *Return: count
  */
 int _printf(const char *format, ...);
-iint _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 
 	va_list args;
