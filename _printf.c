@@ -36,14 +36,12 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == '%')
 			{
-				_putshar('%');
-				count++;
+				count += _putshar('%');
 			}
 			else
 			{
-				_putshar('%');
-				_putshar(format[i]);
-				count++;
+				count += _putshar('%');
+				count += _putshar(format[i]);
 			}
 		}
 		else
