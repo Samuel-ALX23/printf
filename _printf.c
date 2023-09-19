@@ -29,6 +29,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				count += _putshar('%');
+				i++;
 				continue;
 			}
 		}
