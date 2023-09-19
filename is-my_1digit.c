@@ -5,8 +5,8 @@
  *
  *Return: count
  */
-int _printf(const char *format, ...);
-int _printf(const char *format, ...)
+int output_digit(const char *format, ...);
+int output_digit(const char *format, ...)
 {
 
 	va_list args;
