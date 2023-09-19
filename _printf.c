@@ -7,6 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
+	
 	va_list args;
 	int i;
 	int count = 0;
@@ -21,7 +22,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++
+			i++;
 			if (format[i] == 'c' || format[i] == 's')
 			{
 				count += sm_selector(format[i])(args);
@@ -29,16 +30,21 @@ int _printf(const char *format, ...)
 			else
 			{
 				count += _putshar('%');
-				i++;
 				continue;
 			}
 		}
-		else
+		else if (format[i] == '%' && format[i + 1] == '%')
+		{
+			_putshar('%');
+
+			i += 2;
+		}
+		else 
 		{
 			count += _putshar(format[i]);
 		}
 	}
+
 	va_end(args);
 	return (count);
 }
-
