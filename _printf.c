@@ -5,14 +5,21 @@
  *
  *Return: count
  */
-int _printf(const char *format, ...)
+int _printf(const char *format, ...);
+iint _printf(const char *format, ...)
 {
-	
+
 	va_list args;
 	int i;
 	int count = 0;
 
 	va_start(args, format);
+
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+
 	if (format == NULL)
 	{
 		return (-1);
@@ -27,19 +34,18 @@ int _printf(const char *format, ...)
 			{
 				count += sm_selector(format[i])(args);
 			}
+			else if (format[i] == '%')
+			{
+				count += _putshar('%');
+			}
 			else
 			{
 				count += _putshar('%');
-				continue;
+				count += _putshar(format[i]);
 			}
-		}
-		else if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putshar('%');
 
-			i += 2;
 		}
-		else 
+		else
 		{
 			count += _putshar(format[i]);
 		}
