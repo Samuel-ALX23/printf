@@ -11,7 +11,10 @@ int print_binary(int j)
 	int i = 0;
 	int n[64];
 	int x;
-
+if (i >= 64)
+{
+	return (-1);
+}
 
 	if (j == 0)
 	{
