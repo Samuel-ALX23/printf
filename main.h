@@ -18,7 +18,7 @@ int c_placer(va_list arg);
 int s_placer(va_list arg);
 int i_placer(va_list arg);
 int output_digit(const char *format, ...);
-int print_binary(int j);
+int print_binary(unsigned int j);
 int b_placer(va_list arg);
 
 #endif

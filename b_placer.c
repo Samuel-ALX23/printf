@@ -8,10 +8,10 @@
 int b_placer(va_list arg)
 {
 	int i = 0;
-	unsigned int uint;
+	unsigned int c;
 
-	uint = va_arg(arg, unsigned int);
+	c = va_arg(arg, unsigned int);
 
-	i = print_binary(uint);
+	i = print_binary(c);
 	return (i);
 }

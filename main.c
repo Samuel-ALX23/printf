@@ -44,7 +44,9 @@ int main(void)
   len2 =  printf("%%%%%%%%\n");
 	 printf("%d, %d", len, len2);
 	 _printf("%b\n", 98);
-	 
+	 _printf("%b\n", 0);
+	 _printf("%b\n", -1024);
+	 _printf("%b\n", 1024);
  
     return (0);
 }
