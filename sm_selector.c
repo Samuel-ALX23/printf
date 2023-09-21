@@ -25,6 +25,10 @@ int (*sm_selector(char str))(va_list args)
 	{
 		return (&i_placer);
 	}
+	else if( str == 'b')
+	{
+		return (&b_placer);
+	}
 
 	return (0);
 

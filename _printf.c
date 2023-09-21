@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'c' || format[i] == 's' ||
-					format[i] == 'd' || format[i] == 'i')
+					format[i] == 'd' || format[i] == 'i' || format[i] == 'b')
 			{
 				count += sm_selector(format[i])(args);
 			}

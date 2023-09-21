@@ -43,6 +43,8 @@ int main(void)
  len =   _printf("%%%%%%%%\n");
   len2 =  printf("%%%%%%%%\n");
 	 printf("%d, %d", len, len2);
+	 _printf("%b\n", 98);
+	 
  
     return (0);
 }
