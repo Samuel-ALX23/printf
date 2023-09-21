@@ -9,7 +9,7 @@
 int print_binary(int j)
 {
 	int i = 0;
-	int n[32];
+	int n[64];
 	int x;
 
 
